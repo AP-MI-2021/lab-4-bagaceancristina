@@ -97,6 +97,8 @@ def primeste_nume(n:str):
         return 'opt'
     elif n == '9':
         return 'noua'
+    elif n == '0':
+        return 'zero'
     elif n == '.':
         return 'virgula'
 
@@ -114,12 +116,20 @@ def formare_nume_numar(n):
     return nume
 
 
+def test_formare_nume_numar():
+    assert formare_nume_numar(1.1) == 'unuvirgulaunu'
+    assert formare_nume_numar(7) == 'sapte'
+    assert formare_nume_numar(14) == 'unupatru'
+    assert formare_nume_numar(3.12) == 'treivirgulaunudoi'
+
+
 def get_numere_ca_nume(lst):
     '''
     transforma numerele unei liste in cuvinte
     :param lst: lista de numere float
     :return: lista de cuvinte
     '''
+    test_formare_nume_numar()
     result_list = []
     for element in lst:
         result_list.append(formare_nume_numar(element))
